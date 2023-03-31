@@ -1,6 +1,6 @@
 Name:		texlive-wasy-type1
 Version:	53534
-Release:	1
+Release:	2
 Summary:	Type 1 versions of wasy fonts
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/wasy-type1
