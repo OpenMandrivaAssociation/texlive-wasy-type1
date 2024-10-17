@@ -3,7 +3,7 @@ Version:	53534
 Release:	2
 Summary:	Type 1 versions of wasy fonts
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/wasy-type1
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/wasy-type1
 License:	pd
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wasy-type1.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wasy-type1.doc.r%{version}.tar.xz
