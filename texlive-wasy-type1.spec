@@ -1,37 +1,21 @@
-Name:		texlive-wasy-type1
-Version:	53534
-Release:	2
+%global tl_name wasy-type1
+%global tl_revision 53534
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	001.002
+Release:	%{tl_revision}.1
 Summary:	Type 1 versions of wasy fonts
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/wasy-type1
+URL:		https://www.ctan.org/tex-archive/fonts/wasy-type1
 License:	pd
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wasy-type1.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/wasy-type1.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/wasy-type1.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/wasy-type1.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(wasy)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
 Converted (Adobe Type 1) outlines of the wasy fonts.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/fonts/type1/public/wasy-type1
-%{_texmfdistdir}/fonts/map/dvips/wasy-type1
-%{_texmfdistdir}/fonts/afm/public/wasy-type1
-%doc %{_texmfdistdir}/doc/fonts/wasy-type1
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
